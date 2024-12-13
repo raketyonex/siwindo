@@ -1,0 +1,170 @@
+/* Styling untuk body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Background abu-abu terang */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling untuk navbar */
+.navbar {
+    background-color: #0056b3; /* Background navbar biru */
+    border-bottom: 2px solid #007bff; /* Garis bawah navbar biru terang */
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Warna teks putih */
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f8f9fa;
+    background-color: #3789db; /* Efek hover dengan warna lebih gelap */
+}
+
+/* Styling untuk container dashboard */
+.container {
+    background-color: #ffffff; /* Background putih untuk konten */
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+    margin-top: 40px;
+    
+}
+.container.d-flex {
+    margin-bottom: 0;  /* Menghapus jarak bawah pada container */
+    padding-bottom: 10px;  /* Opsional: Tambahkan padding bawah agar lebih rapat */
+}
+.tambah-wisata-container {
+    background-color: #f9f9f9; /* Background yang sedikit lebih terang */
+    border-radius: 10px; /* Sudut lebih bulat */
+    padding: 30px; /* Lebih sedikit padding */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Efek bayangan lebih kuat */
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+/* Styling untuk judul dashboard */
+h2 {
+    color: #343a40; /* Warna teks abu-abu gelap */
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* Styling untuk form filter */
+select.form-control {
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Sudut melengkung pada select */
+    border: 2px solid #ced4da; /* Border lembut */
+    padding: 12px;
+    background-color: #f8f9fa; /* Latar belakang abu-abu terang */
+    height: 50px;
+}
+
+select.form-control:focus {
+    border-color: #007bff; /* Border biru saat fokus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efek cahaya biru */
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #007bff; /* Background abu-abu gelap untuk header tabel */
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+table td {
+    background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+}
+
+table tbody tr:hover {
+    background-color: #e9ecef; /* Efek hover dengan background lebih terang */
+}
+
+/* Styling untuk tombol */
+.btn {
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+td .btn-group {
+    display: flex;
+    flex-direction: column; /* Menyusun tombol secara vertikal */
+    gap: 10px; /* Memberikan jarak antara tombol */
+    justify-content: center; /* Menyelaraskan tombol di tengah secara vertikal */
+}
+
+/* Tombol Edit */
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+/* Tombol Hapus */
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Styling untuk pesan ketika data kosong */
+.text-center {
+    font-size: 1.2rem;
+    color: #6c757d;
+    padding: 20px;
+}
+
+/* Efek pada navbar saat scroll */
+.navbar {
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #0056b3;
+}
+
+/* Shadow effect on buttons when focused */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Efek bayangan saat tombol difokuskan */
+}

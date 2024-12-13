@@ -1,0 +1,8 @@
+/* General Body and Background Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://www.lamudi.co.id/journal/wp-content/uploads/2022/11/pantai-di-gunung-kidul.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+

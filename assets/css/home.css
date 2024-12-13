@@ -1,0 +1,115 @@
+/* Mengatur background halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #87b2f3; /* Warna latar belakang lembut */
+    color: #333; /* Warna teks utama */
+}
+
+/* Styling untuk container utama */
+.container {
+    background-color: #fff; /* Background putih untuk area konten */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan bayangan lembut */
+    padding: 30px;
+}
+
+/* Styling untuk heading */
+h2 {
+    font-size: 2rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Styling untuk tombol */
+.btn {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Animasi halus saat tombol di-hover */
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #9d00ff;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.8; /* Memberikan efek transparansi saat tombol di-hover */
+    transform: translateY(-2px); /* Memberikan efek sedikit terangkat */
+}
+
+/* Styling untuk alert */
+.alert {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+/* Styling untuk tabel */
+.table {
+    border-collapse: separate;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Styling untuk header tabel */
+.table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+/* Styling untuk sel tabel */
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* Styling untuk hover pada baris tabel */
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Styling untuk badge status */
+.badge {
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.badge-success {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Styling untuk button cetak tiket */
+.table .btn-primary {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.table .btn-primary:hover {
+    background-color: #0056b3;
+}

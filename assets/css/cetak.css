@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #87b2f3;
+    color: #333;
+}
+
+/* Styling untuk container */
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+/* Styling untuk heading */
+h2 {
+    font-size: 2rem;
+    color: #141619;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #393e43;
+    color: white;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #f8f9fa;
+}
+
+/* Styling untuk tombol */
+.btn {
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Tombol Print */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Tombol Kembali */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Styling untuk alert jika data tidak ditemukan */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Tambahkan efek saat hover pada tombol */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
