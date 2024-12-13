@@ -10,14 +10,12 @@
 </head>
 
 <body>
-    <div class="container mt-5" style="background-image: url('https://www.lamudi.co.id/journal/wp-content/uploads/2022/11/pantai-di-gunung-kidul.jpg'); background-size: cover; padding: 20px; border-radius: 10px;">
-        <h2>Tiket Anda</h2><br>
+<div class="container mt-5">
 
         <?php if (isset($pesanan)): ?>
             <table class="table table-bordered">
-            <tr>
-                    
-                    <img src="https://www.lamudi.co.id/journal/wp-content/uploads/2022/11/pantai-di-gunung-kidul.jpg"></>
+                <tr>
+                    <img src= "<?= base_url('assets/images/tiket.png'); ?>" style ="width:100%; height:200px;">
                 </tr>
                 <tr>
                     <th>Atas Nama</th>
