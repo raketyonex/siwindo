@@ -65,7 +65,7 @@ class Auth extends CI_Controller
                     redirect('user');
                 }
             } else {
-                $this->session->set_flashdata('error', 'Invalid credentials.');
+                $this->session->set_flashdata('error', 'Username atau Password salah.');
                 redirect('login');
             }
         }

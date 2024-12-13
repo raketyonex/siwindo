@@ -6,6 +6,7 @@
     <title>Registrasi</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/login.css'); ?>">
 </head>
 <body class="bg-light">
 

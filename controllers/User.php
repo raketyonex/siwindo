@@ -58,7 +58,7 @@ class User extends CI_Controller
             'jumlah_tiket' => $jumlah_tiket,
             'total_harga' => $total_harga,
             'nama_pemesan' => $nama_pemesan,
-            'status' => 'pending',
+            'status' => 'dipesan',
             'tanggal_pemesanan' => date('Y-m-d H:i:s')
         ];
         

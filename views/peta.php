@@ -84,18 +84,18 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    const map = L.map('map').setView([-1.015, 115.665], 5);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    const map = L.map('map').setView([-2.015, 115.665], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
     const icongunung = L.icon({
-        iconUrl: 'https://png.pngtree.com/png-vector/20220624/ourmid/pngtree-pointing-mountain-icon-simple-vector-png-image_5189102.png',
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/2435/2435627.png',
         iconSize: [35, 35],
         iconAnchor: [12, 27],
         popupAnchor: [5, -30]
     });
 
     const iconpantai = L.icon({
-        iconUrl: 'https://cdn-icons-png.freepik.com/512/88/88956.png',
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/8983/8983248.png',
         iconSize: [35, 35],
         iconAnchor: [12, 27],
         popupAnchor: [5, -30]
@@ -110,12 +110,11 @@
             popupContent += "<img src='" + wisata.gambar + "' alt='" + wisata.nama + "' />";
         }
 
-        popupContent += "<b>" + wisata.nama + "</b><br>" +
-                        "<i>" + wisata.jenis + "</i><br><br>" +
-                        "<b>Harga: Rp " + wisata.harga + "</b><br>" +
-                        "<p>" + wisata.deskripsi + "</p>";
+        popupContent += "<center><b><h2>" + wisata.nama + "</b><br></center>" +
+                        "<p>" + wisata.deskripsi + "</p>" +
+                        "<b>Harga: Rp. " + wisata.harga + ' / tiket' + "</b><br><br>";
 
-        popupContent += "<a href='" + '<?= site_url("user/pesan_tiket/") ?>/' + wisata.id + "' class='btn-tiket'>Pesan Tiket</a>";
+        popupContent += "<center><a href='" + '<?= site_url("user/pesan_tiket/") ?>/' + wisata.id + "' class='btn-tiket'>Pesan Tiket</a></center>";
 
         popupContent += "</div>";
 
@@ -128,9 +127,9 @@
         } else {
             markerIcon = L.icon({
                 iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-                iconSize: [25, 41], 
-                iconAnchor: [12, 41],
-                popupAnchor: [0, -41]
+                iconSize: [35, 35],
+                iconAnchor: [12, 27],
+                popupAnchor: [5, -30]
             });
         }
 

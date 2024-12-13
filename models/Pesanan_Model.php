@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pesanan_Model extends CI_Model
 {
@@ -30,7 +30,8 @@ class Pesanan_Model extends CI_Model
     }
 
     // admin: Menghitung total harga tiket pesanan berdasarkan ID pesanan
-    public function get_total_harga($pesanan_id) {
+    public function get_total_harga($pesanan_id)
+    {
         $this->db->select('pesanan.jumlah_tiket, wisata.harga');
         $this->db->from('pesanan');
         $this->db->join('wisata', 'pesanan.wisata_id = wisata.id');
@@ -64,10 +65,20 @@ class Pesanan_Model extends CI_Model
         $this->db->where('id', $wisata_id);
         $query = $this->db->get('wisata');
         return $query->row_array();
-    }  
+    }
 
     // user: Menyimpan pesanan tiket baru
-    public function save_pesanan($data) {
+    public function save_pesanan($data)
+    {
         return $this->db->insert('pesanan', $data);
     }
+    //admin: Menyetak bukti PDF
+    public function getPdf()
+    {
+        $this->db->select('pesanan.*, wisata.nama AS nama_wisata');
+        $this->db->from('pesanan');
+        $this->db->join('wisata', 'pesanan.wisata_id = wisata.id');
+        return $this->db->get()->result_array();
+    }
+
 }

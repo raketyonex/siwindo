@@ -97,5 +97,32 @@ class Admin extends CI_Controller
         }
         redirect('admin/data_tiket');
     }
+    public function laporan_buku_pdf()
+{
+    // Load Library Dompdf
+    $this->load->library('Dompdf_gen');
+    
+    // Ambil data pesanan
+    $data['pesanan'] = $this->Pesanan_Model->getPdf();
+
+    // Load tampilan untuk dicetak
+    $html = $this->load->view('admin/cetak_pdf_pesanan', $data, TRUE); // TRUE untuk mengembalikan output sebagai string
+
+    // Atur ukuran kertas dan orientasi
+    $paper_size = 'A4'; // Ukuran kertas
+    $orientation = 'landscape'; // Orientasi: portrait atau landscape
+
+    // Inisialisasi Dompdf
+    $this->dompdf->set_paper($paper_size, $orientation);
+    $this->dompdf->load_html($html);
+    $this->dompdf->render();
+
+    // Nama file PDF
+    $filename = 'Data_Pesanan_' . date('YmdHis') . '.pdf';
+
+    // Output file ke browser
+    $this->dompdf->stream($filename, array("Attachment" => true)); // Attachment true untuk memaksa unduh
+}
+
 }
 ?>

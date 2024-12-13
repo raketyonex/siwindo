@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cetak Tiket</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/cetak.css'); ?>">
 </head>
+
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5" style="background-image: url('https://www.lamudi.co.id/journal/wp-content/uploads/2022/11/pantai-di-gunung-kidul.jpg'); background-size: cover; padding: 20px; border-radius: 10px;">
         <h2>Tiket Anda</h2><br>
 
         <?php if (isset($pesanan)): ?>
             <table class="table table-bordered">
+            <tr>
+                    
+                    <img src="https://www.lamudi.co.id/journal/wp-content/uploads/2022/11/pantai-di-gunung-kidul.jpg"></>
+                </tr>
                 <tr>
                     <th>Atas Nama</th>
                     <td><?= $pesanan['nama_pemesan']; ?></td>
@@ -53,4 +60,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

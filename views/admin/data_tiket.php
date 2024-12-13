@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Tiket</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/admin.css'); ?>">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Admin Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,8 +37,14 @@
     </nav>
 
     <div class="container mt-4">
-        <h2>Data Tiket</h2>
-
+        <div class="d-flex justify-content-center mb-3">
+            <h2>Data Tiket</h2>
+        </div>
+        <!-- Bagian untuk tombol Download PDF di kanan atas -->
+        <div class="d-flex justify-content-end mb-3">
+            <a href="<?= base_url('admin/laporan_buku_pdf'); ?>" class="btn btn-primary"><i class="far fa-file-pdf"></i>
+                Download Pdf</a>
+        </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -58,15 +70,21 @@
                             <td><?= ucfirst($order->status); ?></td>
                             <td>Rp <?= number_format($order->total_harga, 0, ',', '.'); ?></td>
                             <td>
-                                <?php if ($order->status !== 'selesai'): ?>
-                                    <a href="<?= base_url('admin/selesaikan_pesanan/'.$order->id); ?>" class="btn btn-success btn-sm" onclick="return confirm('Apakah Anda yakin ingin menyelesaikan pesanan ini?')">Selesaikan</a>
-                                <?php else: ?>
-                                    <span class="badge badge-success">Selesai</span>
-                                <?php endif; ?>
+                                <div class="btn-group">
+                                    <?php if ($order->status !== 'selesai'): ?>
+                                        <a href="<?= base_url('admin/selesaikan_pesanan/' . $order->id); ?>"
+                                            class="btn btn-success btn-sm"
+                                            onclick="return confirm('Apakah Anda yakin ingin menyelesaikan pesanan ini?')">Selesaikan</a>
+                                    <?php else: ?>
+                                        <span class="badge badge-success">Selesai</span>
+                                    <?php endif; ?>
 
-                                <?php if ($order->status !== 'selesai'): ?>
-                                    <a href="<?= base_url('admin/hapus_pesanan/'.$order->id); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">Hapus</a>
-                                <?php endif; ?>
+                                    <?php if ($order->status !== 'selesai'): ?>
+                                        <a href="<?= base_url('admin/hapus_pesanan/' . $order->id); ?>"
+                                            class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus pesanan ini?')">Hapus</a>
+                                    <?php endif; ?>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -83,4 +101,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
