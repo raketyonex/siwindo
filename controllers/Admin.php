@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
 {
@@ -15,7 +15,7 @@ class Admin extends CI_Controller
     {
         $data['wisata'] = $this->Wisata_Model->get_all_wisata();
         $this->load->view('admin/dashboard', $data);
-    }    
+    }
 
     public function tambah_wisata()
     {
@@ -64,7 +64,7 @@ class Admin extends CI_Controller
 
     public function data_tiket()
     {
-        $this->db->select('pesanan.id, pesanan.nama_pemesan, pesanan.jumlah_tiket, pesanan.status, pesanan.total_harga, pesanan.tanggal_pemesanan, wisata.nama as nama_wisata');
+        $this->db->select('pesanan.id, pesanan.nama_pemesan, pesanan.jumlah_tiket, pesanan.status, pesanan.total_harga, pesanan.tanggal_pemesanan, wisata.nama as nama_wisata, pesanan.bukti_transfer');
         $this->db->from('pesanan');
         $this->db->join('wisata', 'wisata.id = pesanan.wisata_id');
         $this->db->order_by('pesanan.tanggal_pemesanan', 'DESC');
@@ -98,31 +98,36 @@ class Admin extends CI_Controller
         redirect('admin/data_tiket');
     }
     public function laporan_buku_pdf()
-{
-    // Load Library Dompdf
-    $this->load->library('Dompdf_gen');
-    
-    // Ambil data pesanan
-    $data['pesanan'] = $this->Pesanan_Model->getPdf();
+    {
+        // Load Library Dompdf
+        $this->load->library('Dompdf_gen');
 
-    // Load tampilan untuk dicetak
-    $html = $this->load->view('admin/cetak_pdf_pesanan', $data, TRUE); // TRUE untuk mengembalikan output sebagai string
+        // Ambil data pesanan
+        $data['pesanan'] = $this->Pesanan_Model->getPdf();
 
-    // Atur ukuran kertas dan orientasi
-    $paper_size = 'A4'; // Ukuran kertas
-    $orientation = 'landscape'; // Orientasi: portrait atau landscape
+        // Load tampilan untuk dicetak
+        $html = $this->load->view('admin/cetak_pdf_pesanan', $data, TRUE);
 
-    // Inisialisasi Dompdf
-    $this->dompdf->set_paper($paper_size, $orientation);
-    $this->dompdf->load_html($html);
-    $this->dompdf->render();
+        // Inisialisasi Dompdf
+        $dompdf = new Dompdf\Dompdf();
+        $options = new Dompdf\Options();
+        $options->set('isRemoteEnabled', TRUE); // Aktifkan akses file lokal/URL
+        $dompdf->setOptions($options);
 
-    // Nama file PDF
-    $filename = 'Data_Pesanan_' . date('YmdHis') . '.pdf';
+        // Atur ukuran kertas dan orientasi
+        $paper_size = 'A4'; // Ukuran kertas
+        $orientation = 'landscape'; // Orientasi landscape
+        $dompdf->setPaper($paper_size, $orientation);
 
-    // Output file ke browser
-    $this->dompdf->stream($filename, array("Attachment" => true)); // Attachment true untuk memaksa unduh
-}
+        // Muat HTML
+        $dompdf->loadHtml($html);
+        $dompdf->render();
 
+        // Nama file PDF
+        $filename = 'Data_Pesanan_' . date('YmdHis') . '.pdf';
+
+        // Output file ke browser
+        $dompdf->stream($filename, array("Attachment" => false));
+    }
 }
 ?>

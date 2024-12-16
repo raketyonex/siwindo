@@ -48,10 +48,11 @@
                         <td>Rp <?= number_format($pesan['total_harga'], 0, ',', '.'); ?></td>
                         <td><?= $pesan['status']; ?></td>
                         <td>
-                            <?php if ($pesan['status'] != 'dipesan'): ?>
-                                <span class="badge badge-success">Selesai</span>
-                            <?php else: ?>
+                            <?php if ($pesan['status'] != 'belum bayar'): ?>
                                 <a href="<?= site_url('user/cetak_tiket/'.$pesan['id']); ?>" class="btn btn-primary">Cetak Tiket</a>
+                            <?php else: ?>
+                                <a href="<?= site_url('user/checkout/'.$pesan['id']); ?>" class="btn btn-primary">Checkout</a>
+                                <a href="<?= site_url('user/batal_pesanan/'.$pesan['id']); ?>" class="btn btn-danger">Batal</a>
                             <?php endif; ?>
                         </td>
                     </tr>

@@ -55,6 +55,7 @@
                     <th>Jumlah Tiket</th>
                     <th>Status</th>
                     <th>Total Harga</th>
+                    <th>Bukti Transfer</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -70,11 +71,19 @@
                             <td><?= ucfirst($order->status); ?></td>
                             <td>Rp <?= number_format($order->total_harga, 0, ',', '.'); ?></td>
                             <td>
+                                <?php if (!empty($order->bukti_transfer)): ?>
+                                    <img src="<?php echo base_url('assets/images/uploads/' . $order->bukti_transfer); ?>"
+                                        alt="Bukti Transfer" width="100" height="100">
+                                <?php else: ?>
+                                    Belum ada bukti transfer
+                                <?php endif; ?>
+                            </td>
+                            <td>
                                 <div class="btn-group">
                                     <?php if ($order->status !== 'selesai'): ?>
                                         <a href="<?= base_url('admin/selesaikan_pesanan/' . $order->id); ?>"
                                             class="btn btn-success btn-sm"
-                                            onclick="return confirm('Apakah Anda yakin ingin menyelesaikan pesanan ini?')">Selesaikan</a>
+                                            onclick="return confirm('Apakah Anda yakin ingin menyelesaikan pesanan ini?')">Konfirmasi</a>
                                     <?php else: ?>
                                         <span class="badge badge-success">Selesai</span>
                                     <?php endif; ?>

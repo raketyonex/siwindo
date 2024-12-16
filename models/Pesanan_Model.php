@@ -26,7 +26,7 @@ class Pesanan_Model extends CI_Model
     public function selesaikan_pesanan($id)
     {
         $this->db->where('id', $id);
-        $this->db->update('pesanan', ['status' => 'selesai']);
+        $this->db->update('pesanan', ['status' => 'sudah bayar']);
     }
 
     // admin: Menghitung total harga tiket pesanan berdasarkan ID pesanan
